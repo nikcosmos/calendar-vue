@@ -1,11 +1,11 @@
 <script setup>
-import Header from './components/Header.vue';
-import Main from './components/Main.vue';
+import VHeader from './components/VHeader.vue';
+import VMain from './components/VMain.vue';
 </script>
 
 <template>
    <div id="app">
-      <Header />
-      <Main />
+      <VHeader />
+      <VMain />
    </div>
 </template>
