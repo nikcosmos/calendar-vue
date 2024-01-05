@@ -2,7 +2,12 @@
 module.exports = {
    content: ['./index.html', './src/**/*.{vue,js}'],
    theme: {
-      extend: {},
+      extend: {
+         container: {
+            center: true,
+            padding: '15px',
+         },
+      },
    },
    plugins: [],
 };
