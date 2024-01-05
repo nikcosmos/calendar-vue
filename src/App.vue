@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import Header from './components/Header.vue';
+import Main from './components/Main.vue';
+</script>
 
 <template>
    <div id="app">
-      <div class="text-red-500">Hello</div>
+      <Header />
+      <Main />
    </div>
 </template>
