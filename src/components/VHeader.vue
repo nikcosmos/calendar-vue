@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
    <div class="pt-5">
       <div class="container max-w-5xl">
