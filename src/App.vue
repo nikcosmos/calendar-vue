@@ -7,8 +7,12 @@ export default {
 </script>
 
 <template>
-   <div id="app">
+   <div
+      id="app"
+      class="min-h-screen flex flex-col">
       <VHeader />
-      <VMain />
+      <main class="flex-auto">
+         <VMain />
+      </main>
    </div>
 </template>
