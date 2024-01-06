@@ -5,7 +5,7 @@ export default {
       ...mapGetters(['getRooms']),
    },
    methods: {
-      ...mapMutations(['setRooms']),
+      ...mapMutations(['setRooms', 'openModal']),
    },
    mounted() {
       this.setRooms();
@@ -33,6 +33,7 @@ export default {
                   :class="{ 'border-l-0': index === 1 }"></span>
             </div>
             <button
+               @click="openModal(res)"
                type="button"
                v-for="res in item.reservation"
                class="h-9 my-2 bg-blue-400 rounded-lg text-center flex justify-center px-2 items-center relative z-10 hover:bg-blue-500 transition-colors"

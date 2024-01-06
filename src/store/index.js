@@ -1,3 +1,4 @@
+import Main from './modules/Main';
 import Room from './modules/Room';
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -7,6 +8,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
    modules: {
+      Main,
       Week,
       Room,
    },

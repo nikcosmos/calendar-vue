@@ -1,8 +1,9 @@
 <script>
 import VHeader from './components/VHeader.vue';
 import VMain from './components/VMain.vue';
+import VModal from './components/UI/VModal.vue';
 export default {
-   components: { VHeader, VMain },
+   components: { VHeader, VMain, VModal },
 };
 </script>
 
@@ -14,5 +15,6 @@ export default {
       <main class="flex-auto">
          <VMain />
       </main>
+      <VModal />
    </div>
 </template>
