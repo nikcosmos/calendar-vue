@@ -1,16 +1,20 @@
-<script setup>
-import ArrowRight from '../components/Icon/ArrowRight.vue';
-import ArrowLeft from '../components/Icon/ArrowLeft.vue';
-import { ref, watchEffect } from 'vue';
-import useRoomList from '../hooks/useRoomList';
-import useWeek from '../hooks/useWeek';
-
-const { nextWeek, prevWeek, returnToday, week } = useWeek();
-const { createRoomsData } = useRoomList();
-const rooms = ref([]);
-watchEffect(() => {
-   rooms.value = createRoomsData(week);
-});
+<script>
+import { mapGetters, mapMutations } from 'vuex';
+import ArrowLeft from './Icon/ArrowLeft.vue';
+import ArrowRight from './Icon/ArrowRight.vue';
+export default {
+   components: { ArrowLeft, ArrowRight },
+   methods: {
+      ...mapMutations(['setWeek', 'returnToday', 'prevWeek', 'nextWeek', 'setRooms']),
+   },
+   computed: {
+      ...mapGetters(['getWeekState', 'getRooms']),
+   },
+   mounted() {
+      this.setWeek();
+      this.setRooms();
+   },
+};
 </script>
 
 <template>
@@ -42,7 +46,7 @@ watchEffect(() => {
                   <div
                      class="p-3 border border-black border-r-0 last:border-r text-center font-medium"
                      :class="{ 'bg-teal-300': item.isToday }"
-                     v-for="item in week">
+                     v-for="item in getWeekState">
                      {{ item.day }}
                   </div>
                </div>
@@ -50,7 +54,7 @@ watchEffect(() => {
          </div>
          <div class="flex flex-col">
             <div
-               v-for="item in rooms"
+               v-for="item in getRooms"
                class="flex">
                <div
                   class="px-4 py-6 border-black border border-b-0 last:border-b font-bold basis-1/5 flex-none">
