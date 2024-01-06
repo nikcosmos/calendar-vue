@@ -2,7 +2,7 @@ import moment from 'moment';
 
 export default {
    state: {
-      day: moment(),
+      day: moment().isoWeekday('Monday'),
       week: [],
    },
    getters: {
@@ -19,15 +19,15 @@ export default {
          this.commit('setRooms');
       },
       nextWeek(state) {
-         state.day = moment(state.day).add(1, 'w');
+         state.day = moment(state.day).isoWeekday('Monday').add(1, 'w');
          this.commit('setWeek');
       },
       prevWeek(state) {
-         state.day = moment(state.day).subtract(1, 'w');
+         state.day = moment(state.day).isoWeekday('Monday').subtract(1, 'w');
          this.commit('setWeek');
       },
       returnToday(state) {
-         state.day = moment();
+         state.day = moment().isoWeekday('Monday');
          this.commit('setWeek');
       },
    },
