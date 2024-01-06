@@ -6,7 +6,7 @@ export default {
       week: [],
    },
    getters: {
-      getWeekState(state) {
+      getWeek(state) {
          return state.week;
       },
       getWeekArr(state) {
@@ -15,7 +15,7 @@ export default {
    },
    mutations: {
       setWeek(state) {
-         state.week = getWeekArr(state.day);
+         state.week = createWeekArr(state.day);
          this.commit('setRooms');
       },
       nextWeek(state) {
@@ -32,7 +32,7 @@ export default {
       },
    },
 };
-function getWeekArr(data = '') {
+function createWeekArr(data = '') {
    const result = [];
    for (let i = 1; i < 8; i++) {
       const day = moment(data).day(i).toObject();
