@@ -23,7 +23,7 @@ export default {
    mutations: {
       setWeek(state) {
          state.week = createWeekArr(state.day);
-         this.commit('setRooms');
+         this.commit('setReserves');
       },
       nextWeek(state) {
          state.day = dayjs(state.day).isoWeekday(1).add(1, 'w');

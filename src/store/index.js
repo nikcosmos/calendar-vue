@@ -1,5 +1,5 @@
 import Main from './modules/Main';
-import Room from './modules/Room';
+import Reserves from './modules/Reserves';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import Week from './modules/Week';
@@ -10,6 +10,6 @@ export default new Vuex.Store({
    modules: {
       Main,
       Week,
-      Room,
+      Reserves,
    },
 });

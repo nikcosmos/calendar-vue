@@ -2,24 +2,26 @@ import data from '../../assets/data.json';
 
 export default {
    state: {
-      rooms: [],
+      reserves: [],
    },
    getters: {
-      getRooms(state) {
-         return state.rooms;
+      getReserves(state) {
+         return state.reserves;
       },
    },
    mutations: {
-      setRooms(state) {
-         const arrWeek = this.getters.getWeekArr;
-         const rooms = getAllRooms();
-         getAllReservation(rooms);
-         filteredReservation(rooms, arrWeek);
-         state.rooms = rooms;
+      setReserves(state) {
+         state.reserves = createReserves(this.getters.getWeekArr);
       },
    },
 };
 
+function createReserves(arrWeek) {
+   const result = getAllRooms();
+   getAllReservation(result);
+   filteredReservation(result, arrWeek);
+   return result;
+}
 function getAllRooms() {
    const result = [];
    data.map((item) => {
