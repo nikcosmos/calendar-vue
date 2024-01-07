@@ -24,7 +24,7 @@ export default {
       <div class="fixed inset-0 overflow-y-auto pointer-events-none">
          <div class="flex items-center justify-center p-4 min-h-full text-center">
             <div
-               class="bg-white rounded-lg w-full max-w-md py-3 px-9 pointer-events-auto relative flex flex-col items-center">
+               class="bg-white rounded-lg w-full max-w-md py-5 px-9 pointer-events-auto relative flex flex-col items-start gap-1">
                <button
                   @click.stop="closeModal"
                   type="button"
@@ -32,19 +32,37 @@ export default {
                   <Close />
                </button>
                <h2 class="text-3xl font-medium mb-5">{{ getModalData.name }}</h2>
-               <a
-                  :href="'mailto:' + getModalData.email"
-                  class="block"
-                  >{{ getModalData.email }}</a
-               >
-               <a
-                  :href="'tel:' + getModalData.phone"
-                  class="block"
-                  >{{ getModalData.phone }}</a
-               >
-               <span class="block font-bold">Guests</span>
-               <span class="block">Adults:{{ getModalData.guestInfo.adults }}</span>
-               <span class="block">Children:{{ getModalData.guestInfo.children }}</span>
+               <div class="flex gap-1 items-center">
+                  <span class="font-bold">Email:</span>
+                  <a
+                     target="_blank"
+                     :href="'mailto:' + getModalData.email"
+                     class="block hover:underline"
+                     >{{ getModalData.email }}</a
+                  >
+               </div>
+               <div class="flex gap-1 items-center">
+                  <span class="font-bold">Phone:</span>
+                  <a
+                     :href="'tel:' + getModalData.phone"
+                     class="block hover:underline"
+                     >{{ getModalData.phone }}</a
+                  >
+               </div>
+               <div class="flex gap-1 items-center">
+                  <span class="font-bold">Adults:</span>
+                  {{ getModalData.guestInfo.adults }}
+               </div>
+               <div class="flex gap-1 items-center">
+                  <span class="font-bold">Children:</span>
+                  {{ getModalData.guestInfo.children }}
+               </div>
+               <div class="flex gap-1 items-center">
+                  <span class="font-bold">Start:</span> {{ getModalData.start }}
+               </div>
+               <div class="flex gap-1 items-center">
+                  <span class="font-bold">End:</span> {{ getModalData.end }}
+               </div>
             </div>
          </div>
       </div>
