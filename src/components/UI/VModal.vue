@@ -23,7 +23,8 @@ export default {
          class="fixed inset-0 bg-black/40"></div>
       <div class="fixed inset-0 overflow-y-auto pointer-events-none">
          <div class="flex items-center justify-center p-4 min-h-full text-center">
-            <div class="bg-white rounded-lg w-full max-w-md py-3 px-9 pointer-events-auto relative">
+            <div
+               class="bg-white rounded-lg w-full max-w-md py-3 px-9 pointer-events-auto relative flex flex-col items-center">
                <button
                   @click.stop="closeModal"
                   type="button"
